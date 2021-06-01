@@ -6,8 +6,8 @@
         "data": {
           "username": "Username",
           "password": "Password",
-          "country_code": "Country code",
-          "omit_channel_quality": "Omit channel quality"
+          "country_code": "Provider",
+          "omit_channel_quality": "Strip 'HD' from channel names"
         }
       }
     },

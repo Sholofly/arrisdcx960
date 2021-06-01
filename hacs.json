@@ -1,5 +1,5 @@
 {
-    "name": "ARRIS DCX960",
+    "name": "Arris DCX960",
     "country": ["NL"],
     "iot_class": "Local Push",
     "domains": ["media_player"],

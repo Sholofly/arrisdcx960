@@ -1,5 +1,5 @@
 {
-    "name": "Arris DCX960",
+    "name": "Arris DCX960 (Ziggo, Telenet, Magenta, UPC, Virgin)",
     "country": ["NL"],
     "iot_class": "Local Push",
     "domains": ["media_player"],

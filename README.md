@@ -1,4 +1,4 @@
-# Horizon EOS Settopbox (Arris DCX960)
+# Arris DCX960 Horizon Settop box (Ziggo, Telenet, Magenta, UPC, Virgin)
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 <br><a href="https://www.buymeacoffee.com/sholofly" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-black.png" width="150px" height="35px" alt="Buy Me A Coffee" style="height: 35px !important;width: 150px !important;" ></a>

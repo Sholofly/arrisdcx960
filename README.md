@@ -21,7 +21,7 @@ A media player component for Home Assistant that creates a media player and a se
 
 
 ## Possible countries/providers
-Want to find out if your box/provider can be added in the future? Please go to the [Horizon site in your country](https://www.horizon.tv). If the web interface looks familiar please contact me end lets figure that out.
+Want to find out if your box/provider can be added in the future? Please go to the [Horizon site in your country](https://www.horizon.tv). If the web interface looks familiar please contact me and lets figure that out.
 
 Next countries do have that familiar web interface but I don't have enough info to be able to add them to the support list. 
 | Country | Web app URL 

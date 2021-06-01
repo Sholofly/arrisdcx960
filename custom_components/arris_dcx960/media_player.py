@@ -150,8 +150,8 @@ class ZiggoNextMediaPlayer(MediaPlayerEntity):
                 (DOMAIN, self.box_id)
             },
             "name": self.box_name,
-            "manufacturer": "Ziggo",
-            "model": "Mediabox Next",
+            "manufacturer": "Arris",
+            "model": "DCX960",
         }
 
     def __init__(self, box: ZiggoNextBox, api: ZiggoNext, omit_channel_quality: bool):

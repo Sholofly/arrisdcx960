@@ -1,0 +1,23 @@
+{
+  "title": "arrisdcx960",
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "username": "Username",
+          "password": "Password",
+          "country_code": "Country code",
+          "omit_channel_quality": "Omit channel quality"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Can't connect",
+      "invalid_auth": "Invalid credentials",
+      "unknown": "Unknown error"
+    },
+    "abort": {
+      "already_configured": "This account is already configured."
+    }
+  }
+}

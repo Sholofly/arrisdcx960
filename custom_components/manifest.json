@@ -1,0 +1,18 @@
+{
+  "domain": "arris_dcx960",
+  "name": "Arris DCX960",
+  "config_flow": true,
+  "documentation": "https://github.com/Sholofly/arrisdcx960",
+  "requirements": [
+    "ziggonext==0.12.7"
+  ],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": [
+    "@Sholofly"
+  ],
+  "iot_class": "cloud_push",
+  "version": "0.1.0"
+}

@@ -6,7 +6,6 @@ import time
 import homeassistant.helpers.config_validation as cv
 
 from homeassistant.components.media_player import MediaPlayerEntity, BrowseMedia
-from homeassistant.core import callback
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import HomeAssistantType
@@ -14,6 +13,7 @@ from .const import (
     API,
     RECORD,
     REWIND,
+
     FAST_FORWARD,
     REMOTE_KEY_PRESS,
     CONF_OMIT_CHANNEL_QUALITY,
@@ -58,7 +58,9 @@ _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup_entry(
-    hass: HomeAssistantType, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
+    hass: HomeAssistantType,
+    entry: ConfigEntry, 
+    async_add_entities: AddEntitiesCallback
 ) -> None:
     """Setup platform"""
     players = []

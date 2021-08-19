@@ -10,6 +10,6 @@
   "version": "0.1.2",
   "config_flow": true,
   "requirements": [
-    "ziggonext==0.13.0"
+    "ziggonext==0.13.3"
   ]
 }

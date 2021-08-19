@@ -14,6 +14,7 @@ REMOTE_KEY_PRESS = "remote_key_press"
 COUNTRY_CODES = {
     "Ziggo": "nl",
     "Telenet (BE)": "be-nl",
+    "Telenet (BE, PREPROD)": "be-nl-preprod",
     "Telenet (FR)": "be-fr",
     "UPC Switzerland": "ch",
     "Virgin Media (GB)": "gb",
@@ -22,4 +23,3 @@ COUNTRY_CODES = {
     "Magenta": "at",
     "Vodafone Hungary": "hu",
 }
-# country_codes = ["nl", "be-nl", "be-fr", "ch", "at", "gb", "ie", "pl", "hu"]

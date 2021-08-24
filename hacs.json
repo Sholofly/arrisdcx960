@@ -3,5 +3,6 @@
     "country": ["NL"],
     "iot_class": "cloud_push",
     "domains": ["media_player"],
-    "render_readme": true
+    "render_readme": true,
+    "homeassistant": "2021.2.1"
 }

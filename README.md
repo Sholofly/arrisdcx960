@@ -20,10 +20,8 @@ A media player component for Home Assistant that creates a media player and a se
 
 
 
-## Possible countries/providers
-Want to find out if your box/provider can be added in the future? Please go to the [Horizon site in your country](https://www.horizon.tv). If the web interface looks familiar please contact me and lets figure that out.
-
-Next countries do have that familiar web interface but I don't have enough info to be able to add them to the support list. 
+## Not supported countries/providers
+Next countries do have the same familiar web interface but aren't supported due to the use of other hardware than the Arris box. 
 | Country | Web app URL 
 | --- | ----------- 
 | Chech Republic | [Horizon TV](https://www.horizon.tv/cs_cz)
@@ -34,7 +32,6 @@ Next countries do have that familiar web interface but I don't have enough info 
 | Hungary | Vodafone Hungary | [Unknown](https://www.horizon.tv/hu_hu.html) | no (testers wanted!)
 
 
-
 ## Prerequisites
 
 - The energy mode needs to be set to high, otherwise you are not able to switch the device on in the media player.
@@ -42,9 +39,10 @@ Next countries do have that familiar web interface but I don't have enough info 
 ## HACS Installation
 
 1. Make sure you've installed [HACS](https://hacs.xyz/docs/installation/prerequisites)
-2. In the integrations tab, search for ArrisDCX960.
-3. Install the Integration.
-4. Configure the integration using the HA integration page, Search for ArrisDCX960.
+2. Add [this repo](https://github.com/Sholofly/arrisdcx960/) as custom repository 
+3. In the integrations tab, search for ArrisDCX960.
+4. Install the Integration.
+5. Configure the integration using the HA integration page, Search for ArrisDCX960.
 
 ## Manual installation
 

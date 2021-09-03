@@ -39,10 +39,9 @@ Next countries do have the same familiar web interface but aren't supported due 
 ## HACS Installation
 
 1. Make sure you've installed [HACS](https://hacs.xyz/docs/installation/prerequisites)
-2. Add [this repo](https://github.com/Sholofly/arrisdcx960/) as custom repository 
-3. In the integrations tab, search for ArrisDCX960.
-4. Install the Integration.
-5. Configure the integration using the HA integration page, Search for ArrisDCX960.
+2. In the integrations tab, search for ArrisDCX960.
+3. Install the Integration.
+4. Configure the integration using the HA integration page, Search for ArrisDCX960.
 
 ## Manual installation
 
@@ -60,7 +59,6 @@ Next countries do have the same familiar web interface but aren't supported due 
 2. Click on Integrations
 3. Click on button 'Add integration'
 4. Search for 'Arris DCX960' and click
-5. 
 
 ### Parameters
 

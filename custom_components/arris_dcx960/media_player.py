@@ -1,4 +1,4 @@
-"""Support for interface with a Ziggo Mediabox Next."""
+"""Support for interface with a ArrisDCX960 Settopbox."""
 import logging
 import random
 import voluptuous as vol
@@ -45,13 +45,13 @@ from homeassistant.const import (
     STATE_UNAVAILABLE,
 )
 
-from ziggonext import (
-    ZiggoNext,
-    ZiggoNextBox,
+from arris_dcx960 import (
+    ArrisDCX960,
+    ArrisDCX960Box,
     ONLINE_RUNNING,
     ONLINE_STANDBY,
-    ZiggoRecordingShow,
-    ZiggoRecordingSingle,
+    ArrisDCX960RecordingShow,
+    ArrisDCX960RecordingSingle,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -67,7 +67,7 @@ async def async_setup_entry(
     api = hass.data[DOMAIN][entry.entry_id][API]
     omit_channel_quality = hass.data[DOMAIN][entry.entry_id][CONF_OMIT_CHANNEL_QUALITY]
     for box in api.settop_boxes.values():
-        players.append(ZiggoNextMediaPlayer(box, api, omit_channel_quality))
+        players.append(ArrisDCX960MediaPlayer(box, api, omit_channel_quality))
     async_add_entities(players, True)
 
     SCHEMA = cv.make_entity_service_schema({})
@@ -127,7 +127,7 @@ async def async_setup_entry(
     )
 
 
-class ZiggoNextMediaPlayer(MediaPlayerEntity):
+class ArrisDCX960MediaPlayer(MediaPlayerEntity):
     """The home assistant media player."""
 
     @property
@@ -156,7 +156,7 @@ class ZiggoNextMediaPlayer(MediaPlayerEntity):
             "model": "DCX960",
         }
 
-    def __init__(self, box: ZiggoNextBox, api: ZiggoNext, omit_channel_quality: bool):
+    def __init__(self, box: ArrisDCX960Box, api: ArrisDCX960, omit_channel_quality: bool):
         """Init the media player."""
         self._box = box
         self.api = api
@@ -416,27 +416,27 @@ class ZiggoNextMediaPlayer(MediaPlayerEntity):
         payload = await self.hass.async_add_executor_job(
             self.api.get_show_recording, media_content_id
         )
-        ziggo_show = payload["show"]
-        show = self._build_show_item(ziggo_show)
-        for child in ziggo_show.children:
+        recorded_show = payload["show"]
+        show = self._build_show_item(recorded_show)
+        for child in recorded_show.children:
             show.children.append(self._build_episode_item(child["recording"]))
         return show
 
-    def _build_show_item(self, ziggo_show: ZiggoRecordingShow):
+    def _build_show_item(self, recorded_show: ArrisDCX960RecordingShow):
         """Create response payload to describe contents of a specific library.Used by async_browse_media."""
         return BrowseMedia(
-            title=ziggo_show.title,
+            title=recorded_show.title,
             media_class=MEDIA_CLASS_DIRECTORY,
             media_content_type="show",
-            media_content_id=ziggo_show.media_group_id,
+            media_content_id=recorded_show.media_group_id,
             can_play=False,
             can_expand=True,
-            thumbnail=ziggo_show.image,
+            thumbnail=recorded_show.image,
             children=[],
             children_media_class=MEDIA_CLASS_EPISODE,
         )
 
-    def _build_episode_item(self, recording: ZiggoRecordingSingle):
+    def _build_episode_item(self, recording: ArrisDCX960RecordingSingle):
         """Create response payload to describe contents of a specific library.Used by async_browse_media."""
         title = recording.title
         if recording.season and recording.episode:

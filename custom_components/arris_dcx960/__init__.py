@@ -15,7 +15,7 @@ from .const import (
     COUNTRY_CODES,
 )
 
-from ziggonext import ZiggoNext
+from arris_dcx960 import ArrisDCX960
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -37,7 +37,7 @@ CONFIG_SCHEMA = vol.Schema(
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up arrisdcx960 from a config entry."""
-    api = ZiggoNext(
+    api = ArrisDCX960(
         entry.data[CONF_USERNAME],
         entry.data[CONF_PASSWORD],
         COUNTRY_CODES[entry.data[CONF_COUNTRY_CODE]],

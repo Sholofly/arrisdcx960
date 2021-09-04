@@ -14,7 +14,7 @@ from homeassistant.const import CONF_USERNAME, CONF_PASSWORD
 import homeassistant.helpers.config_validation as cv
 
 from .const import DOMAIN, CONF_COUNTRY_CODE, CONF_OMIT_CHANNEL_QUALITY, COUNTRY_CODES
-from ziggonext import ZiggoNext, ZiggoNextAuthenticationError, ZiggoNextConnectionError
+from arris_dcx960 import ArrisDCX960, ArrisDCX960AuthenticationError, ArrisDCX960ConnectionError
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -34,15 +34,15 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
     """Validate the user input allows us to connect."""
 
     try:
-        api = ZiggoNext(
+        api = ArrisDCX960(
             data[CONF_USERNAME],
             data[CONF_PASSWORD],
             COUNTRY_CODES[data[CONF_COUNTRY_CODE]],
         )
         await hass.async_add_executor_job(api.connect)
-    except ZiggoNextAuthenticationError:
+    except ArrisDCX960AuthenticationError:
         raise InvalidAuth
-    except ZiggoNextConnectionError:
+    except ArrisDCX960ConnectionError:
         raise CannotConnect
     except Exception as ex:
         _LOGGER.error(ex)

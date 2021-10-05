@@ -43,7 +43,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         COUNTRY_CODES[entry.data[CONF_COUNTRY_CODE]],
     )
     await hass.async_add_executor_job(api.connect)
-    hass.data[DOMAIN] = {}
+    hass.data.setdefault(DOMAIN, {})
     hass.data[DOMAIN][entry.entry_id] = {
         API: api,
         CONF_OMIT_CHANNEL_QUALITY: entry.data[CONF_OMIT_CHANNEL_QUALITY],

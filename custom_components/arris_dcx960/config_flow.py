@@ -40,6 +40,7 @@ async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str,
             COUNTRY_CODES[data[CONF_COUNTRY_CODE]],
         )
         await hass.async_add_executor_job(api.connect)
+        await hass.async_add_executor_job(api.disconnect)
     except ArrisDCX960AuthenticationError:
         raise InvalidAuth
     except ArrisDCX960ConnectionError:

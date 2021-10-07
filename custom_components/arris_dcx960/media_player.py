@@ -190,7 +190,7 @@ class ArrisDCX960MediaPlayer(MediaPlayerEntity):
 
     async def async_update(self):
         """Update the box."""
-        # self.api.load_channels()
+        pass
 
     @property
     def name(self):
@@ -211,14 +211,12 @@ class ArrisDCX960MediaPlayer(MediaPlayerEntity):
     @property
     def media_content_type(self):
         """Return the media type."""
-        # if self._box.info.sourceType == "app":
-        #     return MEDIA_TYPE_APP
         return MEDIA_TYPE_EPISODE
 
     @property
     def supported_features(self):
         """Return the supported features."""
-        if self._box.info.sourceType == "app":
+        if self._box.info.source_type == "app":
             return (
                 SUPPORT_PLAY
                 | SUPPORT_PAUSE
@@ -261,7 +259,7 @@ class ArrisDCX960MediaPlayer(MediaPlayerEntity):
         """Return the media image URL."""
         if self._box.info.image is not None:
             image_url = self._box.info.image
-            if self._box.info.sourceType == "linear":
+            if self._box.info.source_type == "linear":
                 join_param = "?"
                 if join_param in self._box.info.image:
                     join_param = "&"
@@ -278,8 +276,8 @@ class ArrisDCX960MediaPlayer(MediaPlayerEntity):
     def source(self):
         """Name of the current channel."""
         if self._omit_channel_quality:
-            return self._strip_quality(self._box.info.channelTitle)
-        return self._box.info.channelTitle
+            return self._strip_quality(self._box.info.channel_title)
+        return self._box.info.channel_title
 
     @property
     def source_list(self):
@@ -323,7 +321,7 @@ class ArrisDCX960MediaPlayer(MediaPlayerEntity):
             except vol.Invalid:
                 _LOGGER.error("Media ID must be positive integer")
                 return
-            if self._box.info.sourceType == "app":
+            if self._box.info.source_type == "app":
                 self.api._send_key_to_box(self.box_id, "TV")
                 time.sleep(1)
 
@@ -336,8 +334,8 @@ class ArrisDCX960MediaPlayer(MediaPlayerEntity):
     def device_state_attributes(self):
         """Return device specific state attributes."""
         return {
-            "play_mode": self._box.info.sourceType,
-            "channel": self._box.info.channelTitle,
+            "play_mode": self._box.info.source_type,
+            "channel": self._box.info.channel_title,
             "title": self._box.info.title,
             "image": self._box.info.image,
         }

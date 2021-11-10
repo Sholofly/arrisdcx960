@@ -19,5 +19,6 @@ COUNTRY_CODES = {
     "Magenta": "at",
     "UPC Switzerland": "ch",
     "Virgin Media (GB)": "gb",
+    "Virgin Media (GB, PREPROD)": "gb-preprod",
     "Virgin Media (IE)": "ie"
 }

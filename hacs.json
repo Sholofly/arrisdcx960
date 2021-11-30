@@ -4,5 +4,5 @@
     "iot_class": "cloud_push",
     "domains": ["media_player"],
     "render_readme": true,
-    "homeassistant": "2021.2.1"
+    "homeassistant": "2021.5.0"
 }

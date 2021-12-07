@@ -331,7 +331,7 @@ class ArrisDCX960MediaPlayer(MediaPlayerEntity):
             _LOGGER.error("Unsupported media type")
 
     @property
-    def device_state_attributes(self):
+    def extra_state_attributes(self):
         """Return device specific state attributes."""
         return {
             "play_mode": self._box.info.source_type,

@@ -23,6 +23,9 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
+**Version of the component**
+The version of the component as it is installed on your HA
+
 **Logging**
 Enable debug logging and add your log. DO NOT SHARE SENSITIVE DATA SUCH AS PASSWORDS AND ACCOUNT INFO!
 You can enable logging by setting up the logging component in HA as follows:

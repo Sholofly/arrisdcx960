@@ -10,6 +10,6 @@
   "version": "1.0.13",
   "config_flow": true,
   "requirements": [
-    "arris-dcx960==0.1.8"
+    "arris-dcx960==0.1.9"
   ]
 }

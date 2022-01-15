@@ -19,7 +19,7 @@ from arris_dcx960 import ArrisDCX960
 
 _LOGGER = logging.getLogger(__name__)
 
-PLATFORMS = ["media_player"]
+PLATFORMS = ["media_player", "sensor"]
 CONFIG_SCHEMA = vol.Schema(
     {
         DOMAIN: vol.Schema(

@@ -7,9 +7,9 @@
     "@Sholofly"
   ],
   "iot_class": "cloud_push",
-  "version": "1.0.15",
+  "version": "1.1.0",
   "config_flow": true,
   "requirements": [
-    "arris-dcx960==0.1.9"
+    "arris-dcx960==0.2.1"
   ]
 }

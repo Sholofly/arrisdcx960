@@ -1,5 +1,4 @@
 """Support for interface with a ArrisDCX960 Settopbox."""
-import logging
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_USERNAME

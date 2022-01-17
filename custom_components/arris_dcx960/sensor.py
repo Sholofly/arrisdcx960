@@ -42,7 +42,7 @@ class ArrisDCX960Sensor(SensorEntity):
     
     @property
     def icon(self):
-        return "mdi:percent"
+        return "mdi:percent-outline"
 
     @property
     def native_unit_of_measurement(self):
